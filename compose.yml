@@ -29,7 +29,6 @@ services:
       db:
         condition: service_healthy
     environment:
-      DATABASE_URL: postgres://postgres:password@db:5432/myapp_development
       RAILS_ENV: development
     stdin_open: true
     tty: true
@@ -37,3 +36,4 @@ services:
 volumes:
   postgres_data:
   bundle_cache:
+  
