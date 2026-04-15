@@ -4,8 +4,13 @@ class StretchesController < ApplicationController
 
     @stretches = if @target_area.present?
                   Stretch.where(target_area: @target_area)
-                 else
+    else
                   Stretch.all
-                 end
+    end
+  end
+
+  def show
+    @stretch = Stretch.find(params[:id])
+    @target_area = params[:target_area]
   end
 end
