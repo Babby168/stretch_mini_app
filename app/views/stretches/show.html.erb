@@ -8,17 +8,44 @@
   <% end %>
 
   <!-- メインコンテンツ -->
+
   <div class="bg-white rounded-lg shadow-lg overflow-hidden pb-8">
     <!-- サムネイルエリア -->
-    <div class="w-full bg-gray-100">
-    <% if @stretch.image_path.present? %>
-      <div class="w-full">
+    
+    <div class="relative bg-gray-200 rounded-lg mb-4 overflow-hidden" style="height: 300px;">
+      <% if @stretch.image_path.present? %>
         <%= image_tag @stretch.image_path,
             alt: @stretch.name,
             class: "w-full h-64 md:h-75 object-cover" %>
-      </div>
-    <% end %>
+      <% end %>
 
+    <!-- カウントダウン表示（画像の上に重ねる） -->
+      <div class="absolute inset-0 flex items-center justify-center">
+        <p class="text-6xl font-bold text-white bg-black bg-opacity-50 px-8 py-4 rounded-lg" id="timer-display">
+          01:00
+        </p>
+      </div>
+    </div>
+
+    <!-- ボタンエリア -->
+    <div class="flex gap-4 justify-center mb-4">
+      <button id="start-btn" class="bg-blue-500 text-white px-8 py-3 rounded-lg hover:bg-blue-600 text-lg font-bold">
+        スタート
+      </button>
+      <button id="stop-btn" class="bg-red-500 text-white px-8 py-3 rounded-lg hover:bg-red-600 text-lg font-bold" style="display: none;">
+        終了する
+      </button>
+    </div>
+
+    <!-- 完了メッセージ（最初は非表示） -->
+    <div id="completion-message" class="hidden mt-6 text-center">
+      <p class="text-3xl font-bold text-green-600">完了！🎉</p>
+    </div>
+
+    <!-- 隠しフィールドでストレッチIDを保持 -->
+    <input type="hidden" id="stretch-id" value="<%= @stretch.id%>">
+
+    
     <!-- タイトルエリア -->
 
     <div class="mb-6">
@@ -65,3 +92,5 @@
       </div>
   </div>
 </div>
+
+<%= javascript_import_module_tag "timer" %>
