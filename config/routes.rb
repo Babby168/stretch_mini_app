@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  get "records/new"
-  get "records/create"
   root "static_pages#top"
   get "static_pages/top"
 
@@ -10,5 +8,5 @@ Rails.application.routes.draw do
     resources :records, only: %i[new create]
   end
 
-  resources :records, only: %i[index show]
+  resources :records, only: %i[index]
 end

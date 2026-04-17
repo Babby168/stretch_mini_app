@@ -1,0 +1,10 @@
+<div class="container mx-auto px-4 py-8">
+  <h1 class="text-2xl font-bold mb-6">記録カレンダー</h1>
+
+  <%= month_calendar(events: @records, attribute: :date) do |date, records| %>
+    <%= date.day %>
+    <% if records.any? %>
+      <span class="text-green-500">●</span>
+    <% end %>
+  <% end %>
+</div>
