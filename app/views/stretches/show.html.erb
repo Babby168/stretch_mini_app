@@ -12,6 +12,8 @@
   <div class="bg-white rounded-lg shadow-lg overflow-hidden pb-8">
     <!-- サムネイルエリア -->
     
+    <!-- 画像が存在しない場合のエラーハンドリングが上手くいかないため、先延ばし中 -->
+
     <div class="relative bg-gray-200 rounded-lg mb-4 overflow-hidden" style="height: 300px;">
       <% if @stretch.image_path.present? %>
         <%= image_tag @stretch.image_path,

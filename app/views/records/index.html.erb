@@ -1,10 +1,47 @@
 <div class="container mx-auto px-4 py-8">
-  <h1 class="text-2xl font-bold mb-6">記録カレンダー</h1>
-
-  <%= month_calendar(events: @records, attribute: :date) do |date, records| %>
-    <%= date.day %>
-    <% if records.any? %>
-      <span class="text-green-500">●</span>
+  <h1 class="text-2xl font-bold mb-6 text-center">記録カレンダー</h1>
+  
+  <div class="bg-white rounded-lg shadow-xl p-8 max-w-md w-full items-center justify-center">
+    <%= month_calendar(events: @records, attribute: :date) do |date, records| %>
+      <div class="calendar-day p-2 min-h-[80px]">
+        <div class="font-bold text-gray-700 mb-1"><%= date.day%></div>
+        <% if records.any? %>
+          <div class="flex flex-col gap-1">
+            <span class="text-green-500 text-2xl">●</span>
+            <span class="text-xs text-gray-600"><%= records.count %>件</span>
+          </div>
+        <% end %>
+      </div>
     <% end %>
-  <% end %>
+  </div>
+
+  <div class="mt-8">
+    <h2 class="text-xl font-bold mb-4 text-center">今月の記録</h2>
+    <div class="bg-white rounded-lg shadow p-6">
+      <% if @records.any? %>
+        <% @records.group_by(&:date).each do |date, records| %>
+          <div class="mb-4 pb-4 border-b last:border-b-0">
+            <div class="font-bold text-gray-700 mb-2">
+              <%= date.strftime('%Y年%m月%d日 (%a)') %>
+            </div>
+            <% records.each do |record| %>
+              <div class="ml-4 text-gray-600">
+                ・<%= record.stretch.name %>
+              </div>
+            <% end %>
+          </div>
+        <% end %>
+      <% else %>
+        <p class="text-gray-500 text-center">まだ記録がありません</p>
+      <% end %>
+    </div>
+  </div>
+
+  <!-- トップに戻るボタン -->
+  <div class="space-y-3 mt-8">
+    <%= link_to 'トップに戻る',
+        root_path,
+        class: 'block w-full text-center bg-gray-200 hover:bg-gray-300 text-gray-700 font-bold py-3 px-4 rounded-lg transition duration-200 ease-in-out',
+        data: { turbo: false } %>
+  </div>
 </div>
