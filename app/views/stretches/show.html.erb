@@ -48,50 +48,56 @@
     <input type="hidden" id="stretch-id" value="<%= @stretch.id%>">
 
     
-    <!-- タイトルエリア -->
+    <div class="px-8">
 
-    <div class="mb-6">
-      <h1 class="text-3xl font-bold text-gray-800 mb-3">
-        <%= @stretch.name %>
-      </h1>
+      <!-- タイトルエリア -->
 
-      <span class="inline-block bg-blue-500 text-white text-sm px-4 py-2 rounded-full">
-        <%= @stretch.target_area %>
-      </span>
-    </div>
-    
-    
-    <!-- 説明エリア -->
-
-    <div class="mb-8">
-      <h2 class="text-xl font-semibold text-gray-800 mb-3">説明</h2>
-      <p class="text-gray-700 leading-relaxed whitespace-pre-wrap">
-        <%= @stretch.description %>
-      </p>
-    </div>
-
-
-    <!-- 手順エリア -->
-    <% if @stretch.steps.present? %>
-      <div class="mb-8">
-        <h2 class="text-xl font-semibold text-gray-800 mb-3">手順</h2>
-        <div class="bg-gray-50 rounded-lg p-6">
-          <% @stretch.steps.split("\n").each_with_index do |step, index| %>
-            <p class="text-gray-700 leading-relaxed mb-2">
-              <%= step.strip %>
-            </p>
-          <% end %>
-        </div>
+      <div class="mb-6">
+        <h1 class="text-3xl font-bold text-gray-800 mb-3">
+          <%= @stretch.name %>
+        </h1>
+  
+        <span class="inline-block bg-blue-500 text-white text-sm px-4 py-2 rounded-full">
+          <%= @stretch.target_area %>
+        </span>
       </div>
-    <% end %>
+      
+      
+      <!-- 説明エリア -->
+  
+      <div class="mb-8">
+        <h2 class="text-xl font-semibold text-gray-800 mb-3">説明</h2>
+        <p class="text-gray-700 leading-relaxed whitespace-pre-wrap">
+          <%= @stretch.description %>
+        </p>
+      </div>
+  
+  
+      <!-- 手順エリア -->
 
-    <!-- 所要時間エリア -->
+      <% if @stretch.steps.present? %>
+        <div class="mb-8">
+          <h2 class="text-xl font-semibold text-gray-800 mb-3">手順</h2>
+          <div class="bg-gray-50 rounded-lg p-6">
+            <% @stretch.steps.split("\n").each_with_index do |step, index| %>
+              <p class="text-gray-700 leading-relaxed mb-2">
+                <%= step.strip %>
+              </p>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+  
+      
+      <!-- 所要時間エリア -->
+
       <div class="flex items-center text-gray-600">
         <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
         </svg>
         <span>所要時間: １分</span>
       </div>
+    </div>
   </div>
 </div>
 
