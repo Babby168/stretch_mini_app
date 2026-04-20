@@ -32,4 +32,12 @@
       </div>
     </div>    
   </div>
+
+  <div class="mt-6">
+    <!-- 記録を見るボタン -->
+    <%= link_to '記録を見る',
+        records_path,
+        class: 'block w-full text-center bg-blue-500 text-white hover:bg-gray-300 text-gray-700 font-bold py-3 px-4 rounded-lg transition duration-200 ease-in-out',
+        data: { turbo: false } %>
+  </div>
 </div>
