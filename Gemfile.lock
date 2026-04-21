@@ -79,7 +79,7 @@ GEM
     ast (2.4.3)
     base64 (0.3.0)
     benchmark (0.5.0)
-    bigdecimal (4.1.1)
+    bigdecimal (4.1.2)
     bindex (0.8.1)
     bootsnap (1.23.0)
       msgpack (~> 1.2)
@@ -106,7 +106,7 @@ GEM
     drb (2.2.3)
     enum_help (0.0.19)
       activesupport (>= 3.0.0)
-    erb (6.0.2)
+    erb (6.0.4)
     erubi (1.13.1)
     foreman (0.90.0)
       thor (~> 1.4)
@@ -236,7 +236,7 @@ GEM
       tsort (>= 0.2)
       zeitwerk (~> 2.6)
     rainbow (3.1.1)
-    rake (13.3.1)
+    rake (13.4.2)
     rdoc (7.2.0)
       erb
       psych (>= 4.0.0)
@@ -282,8 +282,8 @@ GEM
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2, < 4.0)
       websocket (~> 1.0)
-    simple_calendar (2.4.3)
-      rails (>= 3.0)
+    simple_calendar (3.1.0)
+      rails (>= 6.1)
     sprockets (4.2.2)
       concurrent-ruby (~> 1.0)
       logger
@@ -357,7 +357,7 @@ DEPENDENCIES
   rails-i18n (~> 7.0.0)
   rubocop-rails-omakase
   selenium-webdriver
-  simple_calendar (~> 2.4)
+  simple_calendar (~> 3.1)
   sprockets-rails
   stimulus-rails
   tailwindcss-rails (~> 4.0)
