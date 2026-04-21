@@ -79,7 +79,7 @@ GEM
     ast (2.4.3)
     base64 (0.3.0)
     benchmark (0.5.0)
-    bigdecimal (4.1.1)
+    bigdecimal (4.1.2)
     bindex (0.8.1)
     bootsnap (1.23.0)
       msgpack (~> 1.2)
@@ -104,7 +104,7 @@ GEM
       irb (~> 1.10)
       reline (>= 0.3.8)
     drb (2.2.3)
-    enum_help (0.0.19)
+    enum_help (0.0.20)
       activesupport (>= 3.0.0)
     erb (6.0.2)
     erubi (1.13.1)
@@ -347,7 +347,7 @@ DEPENDENCIES
   brakeman
   capybara
   debug
-  enum_help (= 0.0.19)
+  enum_help (= 0.0.20)
   foreman
   importmap-rails
   jbuilder
