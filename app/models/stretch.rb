@@ -1,5 +1,5 @@
 class Stretch < ApplicationRecord
-  enum target_area: {
+  enum :target_area, {
     shoulder: 0,
     neck: 1,
     lower_back: 2

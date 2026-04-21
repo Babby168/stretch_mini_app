@@ -1,0 +1,11 @@
+ja:
+  activerecord:
+    models:
+      stretch: ストレッチ
+      record: 記録
+    attributes:
+      stretch:
+        target_area:
+          shoulder: 肩
+          neck: 首
+          lower_back: 腰

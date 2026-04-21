@@ -1,0 +1,9 @@
+ja:
+  stretches:
+    index:
+      title: ストレッチ一覧
+      title_with_area: "%{target_area}のストレッチ"
+      title_all: 全てのストレッチ
+    show:
+      title: ストレッチ詳細
+

@@ -8,9 +8,9 @@
 
   <h1 class="text-3xl font-bold text-center text-gray-800 mb-8">
     <% if @target_area.present? %>
-      <%= @target_area %> のストレッチ
+      <%= t('.title_with_area', target_area: @target_area) %>
     <% else %>
-      全てのストレッチ
+      <%= t('.title_all') %>
     <% end %>
   </h1>
   
