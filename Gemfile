@@ -1,7 +1,7 @@
 source "https://rubygems.org"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
-gem "rails", "~> 7.2.3", ">= 7.2.3.1"
+gem "rails", "~> 8.1.3"
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
 # Use postgresql as the database for Active Record
@@ -38,7 +38,7 @@ gem "bootsnap", require: false
 
 gem "simple_calendar", "~> 2.4"
 
-gem "rails-i18n", "~> 7.0.0"
+gem "rails-i18n", "~> 8.1.0"
 
 gem "enum_help", "0.0.19"
 
